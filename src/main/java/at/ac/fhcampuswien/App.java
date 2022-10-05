@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+//import javax.security.sasl.SaslServer;
 import java.util.Scanner;
 
 public class App {
@@ -7,11 +8,27 @@ public class App {
     //todo Task 1
     public void largestNumber(){
         // input your solution here
-    }
+        }
 
     //todo Task 2
     public void stairs(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int zahl = sc.nextInt();
+        if (zahl < 0) {
+            System.out.println("Invalid number!");
+        } else {
+        int z = 1;
+        for (int i = 1; i<=zahl; i++) {
+            for (int j = 1; j <= i; j++) {
+
+                System.out.print(z+" ");
+                z++;
+            }
+            System.out.println("");
+        }
+        }
     }
 
     //todo Task 3
