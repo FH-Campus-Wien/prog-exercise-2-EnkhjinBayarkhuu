@@ -58,11 +58,70 @@ public class App {
     //todo Task 5
     public void marks(){
         // input your solution here
+        Scanner sc = new Scanner(System.in);
+        double number = 1;
+        double input = 1;
+        double average = 1.00;
+        double sum = 0;
+        int fives = 0;
+        do {
+            System.out.print("Mark "+number+": ");
+            input = sc.nextInt();
+            if(input > 5) {
+                System.out.println("Invalid mark!");
+            }
+            else {
+
+                sum = sum+input;
+
+                if(input == 5){
+                    fives ++;
+                }
+                else {
+                    number++;
+                }
+
+
+            }
+
+
+
+        } while (input > 0);
+        average = sum/number;
+
+        System.out.println("Average: " + average);
+        System.out.println("Negative marks: " + fives);
+
     }
 
     //todo Task 6
-    public void happyNumbers(){
+    public void happyNumbers() {
         // input your solution here
+        {
+        Scanner scanner = new Scanner(System.in);
+        int number, r = 1, num, sum = 0;
+        System.out.print("n: ");
+        number = scanner.nextInt();
+        num = number;
+        while (num > 9)
+        {
+            while (num > 0)
+            {
+            r = num % 10;
+            sum = sum + (r * r);
+            num = num / 10;
+            }
+        num = sum;
+        sum = 0;
+        }
+        if (num == 1) {
+            System.out.println("Happy number!");
+        } else {
+            System.out.println("Sad number!");
+        }
+    }
+    // help from: https://www.efaculty.in/java-programs/happy-number-program-in-java
+        // Happy number is a natural number that reaches 1.
     }
 
     public static void main(String[] args){
