@@ -29,7 +29,6 @@ public class App {
             System.out.println("");
         }
         }
-        // help from: https://www.programiz.com/java-programming/examples/pyramid-pattern
     }
 
     //todo Task 3
@@ -48,6 +47,7 @@ public class App {
 
             System.out.println();
         }
+       // help from: https://www.programiz.com/java-programming/examples/pyramid-pattern
     }
 
     //todo Task 4
