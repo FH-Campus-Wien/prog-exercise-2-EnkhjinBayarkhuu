@@ -1,7 +1,10 @@
 package at.ac.fhcampuswien;
 
+
 //import javax.security.sasl.SaslServer;
+import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class App {
 
@@ -56,42 +59,48 @@ public class App {
     }
 
     //todo Task 5
+    private static final DecimalFormat df= new DecimalFormat ("0.00");
     public void marks(){
         // input your solution here
         Scanner sc = new Scanner(System.in);
-        double number = 1;
-        double input = 1;
-        double average = 1.00;
-        double sum = 0;
+        int number = 1;
+        double input = 1.0;
+        double average = 0.000;
+        double sum = 0.0;
         int fives = 0;
         do {
-            System.out.print("Mark "+number+": ");
+            System.out.print("Mark "+number+ ": ");
             input = sc.nextInt();
             if(input > 5) {
                 System.out.println("Invalid mark!");
             }
             else {
-
                 sum = sum+input;
-
-                if(input == 5){
+                if(input == 5)
+                {
                     fives ++;
-                }
-                else {
                     number++;
                 }
-
-
+                else if (input >=1 && input <5)
+                {
+                    number++;
+                }
             }
+            }
+        while (input > 0);
 
+        if(sum/(number-1) >=0) {
+            average = sum/(number-1);
 
+            System.out.println("Average: " + df.format(average));
+        }
+        else {
+            average = 0.00;
+            System.out.println("Average: " + df.format(average));
+        }
 
-        } while (input > 0);
-        average = sum/number;
-
-        System.out.println("Average: " + average);
+     //   System.out.println("Average: " + df.format(average));
         System.out.println("Negative marks: " + fives);
-
     }
 
     //todo Task 6
