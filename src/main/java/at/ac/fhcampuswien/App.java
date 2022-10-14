@@ -99,11 +99,19 @@ public class App {
                 System.out.println();
             }
             for (int i = h / 2; i > 0; i--) {
-                for (j = i; j < h / 2; j++) {
+                for (j = i; j <= h / 2; j++) {
                     System.out.print(" ");
                 }
                 for (int k = 0 - 1; k <= i - 1; k++) {
-                    System.out.print((char) (c-Math.abs(k)));
+                    if(i == 1)
+                    {
+                        System.out.print((char) (c - Math.abs(0)));
+                        i--;
+
+                    } else {
+
+                        System.out.print((char) (c - Math.abs(k)));
+                    }
                 }
                 System.out.println( );
             }
